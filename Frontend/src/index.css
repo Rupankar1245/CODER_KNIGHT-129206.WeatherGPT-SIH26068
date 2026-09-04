@@ -1,0 +1,238 @@
+@import "tailwindcss";
+
+:root {
+  --bg-dark: #07101f;
+  --panel-bg: rgba(22, 38, 68, 0.45);
+  --panel-border: rgba(255, 255, 255, 0.08);
+  --glass-gradient: linear-gradient(135deg, rgba(30, 58, 110, 0.4) 0%, rgba(15, 28, 55, 0.6) 100%);
+  --accent-blue: #38bdf8;
+  --accent-glow: rgba(56, 189, 248, 0.25);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Scrollbar Style */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+/* Clouds Floating Animation */
+@keyframes floatClouds {
+  0% {
+    transform: translateX(-10%) translateY(0px) scale(1);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translateX(10%) translateY(-6px) scale(1.05);
+    opacity: 0.45;
+  }
+  100% {
+    transform: translateX(-10%) translateY(0px) scale(1);
+    opacity: 0.25;
+  }
+}
+
+.cloud-layer-1 {
+  animation: floatClouds 18s ease-in-out infinite;
+}
+
+.cloud-layer-2 {
+  animation: floatClouds 26s ease-in-out infinite reverse;
+}
+
+/* Chart Line Draw Animation */
+@keyframes drawLine {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.glow-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: lineDraw 1.8s ease-out forwards;
+}
+
+/* Pulsing Dots Effect */
+@keyframes pulseDot {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 6px rgba(56, 189, 248, 0.8);
+  }
+  50% {
+    transform: scale(1.4);
+    box-shadow: 0 0 14px rgba(56, 189, 248, 1);
+  }
+}
+
+.animated-chart-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.chart-dot {
+  animation: pulseDot 3s ease-in-out infinite;
+}
+
+/* Smooth Single Line Draw Animation */
+@keyframes drawPolyline {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animated-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawPolyline 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* AI Chat Panel Animations */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+  }
+}
+
+.animate-msg-1 {
+  animation: slideUpFade 0.4s ease-out forwards;
+}
+
+.animate-msg-2 {
+  animation: slideUpFade 0.4s ease-out 0.15s forwards;
+  opacity: 0;
+}
+
+.ai-avatar-glow {
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+.chip-btn {
+  transition: all 0.2s ease;
+}
+
+.chip-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  transform: translateY(-1px);
+}
+
+.send-btn-hover {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.send-btn-hover:hover {
+  transform: scale(1.05);
+  background-color: #0284c7 !important;
+}
+
+@keyframes pulseGlowAqi {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(16, 185, 129, 0.45);
+  }
+}
+
+@keyframes drawPath {
+  from {
+    stroke-dashoffset: 400;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.aqi-card-hover {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.aqi-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.35);
+}
+
+.animated-graph-path {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: drawPath 1.8s ease-out forwards;
+}
+
+.aqi-pulse-badge {
+  animation: pulseGlowAqi 2.5s infinite ease-in-out;
+}
+
+/* 7-Day Forecast Premium Animations */
+@keyframes rowFadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* consistent glass-morphism style used across premium cards */
+.premium-glass-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 24px; /* maintained border radius */
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.22);
+}
+
+/* Class to apply to each forecast row with unique delays */
+.animated-row {
+  opacity: 0; /* starts hidden */
+  animation: rowFadeInSlide 0.5s ease-out forwards;
+}
