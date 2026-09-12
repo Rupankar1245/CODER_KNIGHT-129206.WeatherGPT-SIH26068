@@ -1,10 +1,10 @@
-# 🌦️ MeghAI
+# 🌦️ WeatherGPT
 
 ### AI-Powered Conversational Weather Intelligence Platform
 
-> **MeghAI** is an intelligent weather platform designed to make weather information more accessible, understandable, and actionable through conversational AI.
+> **WeatherGPT** is an intelligent weather platform designed to make weather information more accessible, understandable, and actionable through conversational AI.
 
-Built for **SIH 2026 – Problem Statement ID 26068: WeatherGPT: Conversational AI for Weather Forecasting, Alerts, and Climate Information**, MeghAI combines real-time weather data, AI-powered conversations, intelligent alerts, climate insights, disaster monitoring, and personalized advisory into a unified platform.
+Built for **SIH 2026 – Problem Statement ID 26068: WeatherGPT: Conversational AI for Weather Forecasting, Alerts, and Climate Information**, WeatherGPT combines real-time weather data, AI-powered conversations, intelligent alerts, climate insights, disaster monitoring, and personalized advisory into a unified platform.
 
 ---
 
@@ -12,7 +12,7 @@ Built for **SIH 2026 – Problem Statement ID 26068: WeatherGPT: Conversational 
 
 Traditional weather applications often present large amounts of raw meteorological data that can be difficult for users to interpret.
 
-**MeghAI transforms complex weather information into simple, contextual, and actionable insights.**
+**WeatherGPT transforms complex weather information into simple, contextual, and actionable insights.**
 
 Users can interact naturally with the platform to understand:
 
@@ -54,6 +54,7 @@ Get up-to-date information including:
 * Wind speed and direction
 * Atmospheric pressure
 * Visibility
+* Cloud cover
 * Sunrise and sunset
 
 ---
@@ -74,7 +75,7 @@ Access upcoming weather forecasts to support better planning and decision-making
 
 Receive important alerts related to potentially hazardous weather conditions.
 
-MeghAI focuses on transforming passive weather notifications into more understandable and actionable information.
+WeatherGPT focuses on transforming passive weather notifications into more understandable and actionable information.
 
 ---
 
@@ -86,6 +87,7 @@ Monitor weather conditions that may indicate potential extreme events such as:
 * Thunderstorms
 * Strong winds
 * Extreme temperatures
+* Other potentially hazardous weather conditions
 
 ---
 
@@ -94,9 +96,9 @@ Monitor weather conditions that may indicate potential extreme events such as:
 Generate weather-aware insights for different sectors, including:
 
 * Agriculture
-* Travel
-* Daily commuting
-* Outdoor activities
+* Marine
+* Aviation
+* Urban activities
 
 ---
 
@@ -116,6 +118,7 @@ Explore weather conditions visually through an interactive map with multiple lay
 * Clouds
 * Pressure
 * Gusts
+* Waves
 
 ---
 
@@ -127,7 +130,9 @@ Get weather information based on the user's current geographical location.
 
 ### 💡 AI Weather Insights
 
-MeghAI analyzes available weather information and presents important insights in a more human-friendly format.
+WeatherGPT analyzes available weather information and presents important insights in a more human-friendly format.
+
+Instead of overwhelming users with raw meteorological values, the platform highlights important conditions, trends, and potential impacts.
 
 ---
 
@@ -140,43 +145,46 @@ Weather information is widely available, but users often face challenges such as
 * Generic alerts with limited actionable guidance
 * Lack of conversational interaction with weather systems
 * Limited personalized insights for different user needs
+* Difficulty connecting weather conditions with real-world decisions
 
 ### 💡 Our Solution
 
-MeghAI creates a unified AI-powered weather intelligence system that allows users to:
+WeatherGPT creates a unified AI-powered weather intelligence system that allows users to:
 
 **Ask → Understand → Analyze → Act**
 
-Instead of simply displaying weather data, MeghAI aims to help users understand what the weather information actually means for them.
+Instead of simply displaying weather data, WeatherGPT aims to help users understand what the weather information actually means for them.
 
 ---
 
 ## 🏗️ System Architecture
 
 ```text
-                     ┌──────────────────────┐
-                     │     User Interface   │
-                     │    React + Vite      │
-                     └──────────┬───────────┘
-                                │
-                                ▼
-                     ┌──────────────────────┐
-                     │       MeghAI         │
-                     │   Application Layer  │
-                     └──────────┬───────────┘
-                                │
-                ┌───────────────┼───────────────┐
-                ▼               ▼               ▼
+                    ┌──────────────────────┐
+                    │     User Interface   │
+                    │   React + TypeScript │
+                    │        + Vite        │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │      WeatherGPT      │
+                    │   Application Layer  │
+                    └──────────┬───────────┘
+                               │
+              ┌────────────────┼────────────────┐
+              ▼                ▼                ▼
        ┌──────────────┐ ┌──────────────┐ ┌──────────────┐
        │ Weather APIs │ │  AI Engine   │ │ Map Services │
        └──────────────┘ └──────────────┘ └──────────────┘
-                │               │               │
-                └───────────────┼───────────────┘
-                                ▼
-                     ┌──────────────────────┐
-                     │ Intelligent Insights │
-                     │ Alerts & Advisory    │
-                     └──────────────────────┘
+              │                │                │
+              └────────────────┼────────────────┘
+                               ▼
+                    ┌──────────────────────┐
+                    │ Intelligent Insights │
+                    │ Alerts & Advisory    │
+                    │ Disaster Monitoring  │
+                    └──────────────────────┘
 ```
 
 ---
@@ -188,7 +196,7 @@ Instead of simply displaying weather data, MeghAI aims to help users understand 
 * React
 * TypeScript
 * Vite
-* CSS
+* Tailwind CSS
 * Lucide React
 
 ### Backend
@@ -200,32 +208,53 @@ Instead of simply displaying weather data, MeghAI aims to help users understand 
 ### AI
 
 * Google Gemini
+* Natural Language Processing
+* Generative AI
 
 ### Weather Data
 
 * OpenWeather API
+* Open-Meteo
+* MET Norway
 
 ### Weather Visualization
 
-* Windy API
+* Windy
+
+### NWP Models
+
+* GFS
+* WRF
 
 ### Deployment
 
 * Netlify – Frontend
 * Render – Backend
 
+### Containerization & Orchestration
+
+* Docker
+* Kubernetes
+
+### Real-Time Communication
+
+* WebSocket
+* MQTT / WIS2.0 integration
+
 ---
 
 ## 📂 Project Structure
 
 ```text
-meghai/
+weathergpt/
 │
 ├── src/
 │   ├── components/
 │   │   ├── dashboard/
 │   │   ├── forecast/
-│   │   ├── weather-map/
+│   │   ├── weather_maps/
+│   │   ├── alerts/
+│   │   ├── ai_insights/
 │   │   └── common/
 │   │
 │   ├── pages/
@@ -233,7 +262,8 @@ meghai/
 │   │   ├── ForecastPage
 │   │   ├── WeatherMapPage
 │   │   ├── AlertsPage
-│   │   └── AIInsightPage
+│   │   ├── AIInsightPage
+│   │   └── AIChatPage
 │   │
 │   ├── services/
 │   ├── hooks/
@@ -278,12 +308,19 @@ VITE_API_BASE_URL=http://127.0.0.1:8000/
 VITE_BACKEND_URL=http://127.0.0.1:8000/
 
 VITE_GEMINI_API_KEY=your_gemini_api_key
-VITE_GEMINI_MODEL=gemini-2.5-flash
+VITE_GEMINI_MODEL=gemini-3.1-flash-lite
 
 VITE_WINDY_API_KEY=your_windy_api_key
 ```
 
-> ⚠️ Never expose your API keys publicly or commit your `.env` file to GitHub.
+> ⚠️ **Security:** Never expose your API keys publicly or commit your `.env` file to GitHub.
+
+Add `.env` to your `.gitignore` file:
+
+```text
+.env
+.env.local
+```
 
 ---
 
@@ -305,7 +342,7 @@ http://localhost:5173
 
 ## 🔗 Backend Setup
 
-The MeghAI backend is built using **Django and Django REST Framework**.
+The WeatherGPT backend is built using **Django and Django REST Framework**.
 
 The backend provides APIs for:
 
@@ -316,14 +353,27 @@ The backend provides APIs for:
 * UV Index
 * Weather Alerts
 * Location-based Weather Data
+* Weather-related processing and transformation
 
 Make sure the backend server is running before using the complete application.
+
+The backend can be started using:
+
+```bash
+python manage.py runserver
+```
+
+The development backend will typically run at:
+
+```text
+http://127.0.0.1:8000/
+```
 
 ---
 
 ## 🌐 API Integrations
 
-MeghAI integrates multiple services to provide weather intelligence.
+WeatherGPT integrates multiple services to provide comprehensive weather intelligence.
 
 ### OpenWeather
 
@@ -333,6 +383,15 @@ Used for:
 * Forecast data
 * Air quality
 * Weather-related information
+* Location-based weather information
+
+### Open-Meteo
+
+Used as an additional meteorological data source for weather and forecast information.
+
+### MET Norway
+
+Used as an additional weather data source for meteorological information and related weather parameters.
 
 ### Google Gemini
 
@@ -342,6 +401,7 @@ Used for:
 * Weather explanations
 * Context-aware insights
 * Natural language interactions
+* Personalized weather interpretation
 
 ### Windy
 
@@ -353,34 +413,119 @@ Used for:
 * Rain layers
 * Cloud visualization
 * Atmospheric conditions
+* Other weather-map layers
+
+---
+
+## 🔄 Application Workflow
+
+```text
+User Query / Location
+          │
+          ▼
+   WeatherGPT Interface
+          │
+          ▼
+    Backend API Layer
+          │
+     ┌────┼─────┐
+     ▼    ▼     ▼
+  Weather AI   Map
+   APIs      Engine Services
+     │    │     │
+     └────┼─────┘
+          ▼
+   Data Processing
+          │
+          ▼
+   AI Context Analysis
+          │
+          ▼
+  Human-Friendly Response
+          │
+          ▼
+ Actionable Weather Guidance
+```
 
 ---
 
 ## 🎯 Use Cases
 
-MeghAI can assist users in several real-world situations.
+WeatherGPT can assist users in several real-world situations.
 
 ### 👨‍🌾 Agriculture
 
 Weather-aware advisory can help users understand potential weather impacts on agricultural activities.
 
-### ✈️ Travel
+Examples include:
 
-Users can analyze weather conditions before planning a journey.
+* Rainfall awareness
+* Temperature conditions
+* Weather-sensitive planning
+* Extreme weather awareness
 
-### 🚶 Daily Activities
+### 🌊 Marine
 
-Get insights for commuting, outdoor activities, and daily planning.
+Weather intelligence can support marine-related planning by providing information about:
+
+* Wind conditions
+* Waves
+* Rainfall
+* Atmospheric conditions
+* Potential hazardous weather
+
+### ✈️ Aviation
+
+Weather information can support aviation-related awareness through:
+
+* Wind conditions
+* Visibility
+* Temperature
+* Pressure
+* Weather alerts
+* Potential severe conditions
+
+### 🏙️ Urban Activities
+
+Weather intelligence can support urban planning and daily activities through:
+
+* Rainfall awareness
+* Temperature conditions
+* Air quality
+* Severe weather alerts
+* Commuting-related insights
 
 ### 🌪️ Extreme Weather Awareness
 
-Monitor potentially dangerous weather conditions and understand possible impacts.
+Monitor potentially dangerous weather conditions and understand their possible impacts.
+
+---
+
+## 📊 Core Intelligence Pipeline
+
+```text
+Raw Meteorological Data
+          ↓
+Data Aggregation
+          ↓
+Weather Data Processing
+          ↓
+AI Context Generation
+          ↓
+Natural Language Understanding
+          ↓
+Contextual Weather Insights
+          ↓
+Actionable Guidance
+```
 
 ---
 
 ## 📸 Screenshots
 
-> Screenshots and application previews will be added here.
+Screenshots and application previews can be added here.
+
+Recommended sections:
 
 ```text
 Dashboard
@@ -388,38 +533,50 @@ AI Chat
 Weather Forecast
 Interactive Weather Map
 Weather Alerts
-AI Insights
+AI Weather Insights
+Sectoral Advisory
+Disaster Monitoring
 ```
 
 ---
 
 ## 🗺️ Future Roadmap
 
-* [ ] More advanced personalized weather recommendations
-* [ ] Multilingual conversational support
+* [ ] Advanced personalized weather recommendations
+* [ ] Expanded multilingual conversational support
 * [ ] Improved disaster risk analysis
 * [ ] Push notification system
 * [ ] Historical weather analytics
-* [ ] More sector-specific advisory
+* [ ] Advanced sector-specific advisory
 * [ ] Offline weather information support
 * [ ] Voice-based AI interaction
 * [ ] Advanced climate insights
+* [ ] GFS model integration
+* [ ] WRF model integration
+* [ ] Improved real-time meteorological data streaming
+* [ ] Advanced weather prediction and visualization
 
 ---
 
 ## 🧩 Core Philosophy
 
 ```text
-Raw Weather Data
-       ↓
-AI Understanding
-       ↓
-Contextual Insights
-       ↓
-Actionable Guidance
+          Raw Weather Data
+                 ↓
+          Data Processing
+                 ↓
+          AI Understanding
+                 ↓
+       Contextual Insights
+                 ↓
+        Actionable Guidance
+                 ↓
+          Smarter Decisions
 ```
 
-MeghAI aims to move beyond traditional weather applications by making weather information **conversational, intelligent, and actionable**.
+WeatherGPT aims to move beyond traditional weather applications by making weather information:
+
+**Conversational • Intelligent • Contextual • Actionable**
 
 ---
 
@@ -427,27 +584,33 @@ MeghAI aims to move beyond traditional weather applications by making weather in
 
 Contributions, suggestions, and improvements are welcome.
 
-1. Fork the repository
-2. Create a new branch
+### 1. Fork the Repository
+
+### 2. Create a New Branch
 
 ```bash
 git checkout -b feature/your-feature-name
 ```
 
-3. Make your changes
-4. Commit your changes
+### 3. Make Your Changes
+
+Implement and test your changes locally.
+
+### 4. Commit Your Changes
 
 ```bash
 git commit -m "Add your feature"
 ```
 
-5. Push the branch
+### 5. Push the Branch
 
 ```bash
 git push origin feature/your-feature-name
 ```
 
-6. Create a Pull Request
+### 6. Create a Pull Request
+
+Open a Pull Request describing your changes and improvements.
 
 ---
 
@@ -457,7 +620,7 @@ Developed as part of **Smart India Hackathon (SIH) 2026**.
 
 ### Project
 
-**MeghAI – AI-Powered Conversational Weather Intelligence Platform**
+**WeatherGPT – AI-Powered Conversational Weather Intelligence Platform**
 
 ### Problem Statement
 
@@ -479,13 +642,13 @@ License information will be added in future releases.
 
 If you find this project interesting, consider giving the repository a ⭐.
 
-It helps support the development of **MeghAI**.
+It helps support the development and improvement of **WeatherGPT**.
 
 ---
 
 <div align="center">
 
-### 🌦️ MeghAI
+### 🌦️ WeatherGPT
 
 **Ask the Weather. Understand the Future. Act Smarter.**
 

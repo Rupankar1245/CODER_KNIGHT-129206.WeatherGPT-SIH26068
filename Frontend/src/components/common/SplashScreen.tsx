@@ -108,7 +108,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({
         {/* Brand Name */}
 
         <h1 className="text-3xl font-semibold tracking-[0.22em] text-white sm:text-4xl">
-          MEGH<span className="text-cyan-400">AI</span>
+          Weather-<span className="text-cyan-400">GPT</span>
         </h1>
 
         {/* Tagline */}

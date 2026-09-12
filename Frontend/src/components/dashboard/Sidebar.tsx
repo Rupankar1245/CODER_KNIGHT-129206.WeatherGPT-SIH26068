@@ -11,6 +11,7 @@ import {
   Bell,
   // Bookmark,
   // Settings,
+  Users2,
   Moon,
   Sun,
   ChevronDown,
@@ -64,11 +65,11 @@ const menuItems = [
   //   path: '/saved_locations',
   //   icon: Bookmark,
   // },
-  // {
-  //   label: 'Settings',
-  //   path: '/settings',
-  //   icon: Settings,
-  // },
+  {
+    label: 'Meet the Team',
+    path: '/settings',
+    icon: Users2,
+  },
 ];
 
 export const Sidebar: React.FC = () => {
@@ -89,7 +90,7 @@ export const Sidebar: React.FC = () => {
         </div>
 
         <span style={styles.brandName}>
-          Megh<span style={{ color: '#38bdf8' }}>AI</span>
+          Weather-<span style={{ color: '#38bdf8' }}>GPT</span>
         </span>
       </div>
 

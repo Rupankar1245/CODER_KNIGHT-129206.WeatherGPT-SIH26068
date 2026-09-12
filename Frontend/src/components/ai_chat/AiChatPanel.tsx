@@ -281,7 +281,7 @@ export const AiChatPanel: React.FC = () => {
 
 
           <h3 style={styles.heading}>
-            Ask MeghAI
+            Ask Weather-GPT
           </h3>
 
 
@@ -489,7 +489,7 @@ export const AiChatPanel: React.FC = () => {
               <p
                 style={styles.emptyDescription}
               >
-                Ask MeghAI about the weather,
+                Ask Weather-GPT about the weather,
                 travel conditions, rain,
                 forecasts and more.
               </p>
@@ -738,9 +738,9 @@ export const AiChatPanel: React.FC = () => {
             value={input}
             placeholder={
               showInitialSkeleton
-                ? 'Loading MeghAI...'
+                ? 'Loading Weather-GPT...'
                 : isLoading
-                  ? 'MeghAI is thinking...'
+                  ? 'Weather-GPT is thinking...'
                   : 'Chat a message...'
             }
             onChange={(event) =>

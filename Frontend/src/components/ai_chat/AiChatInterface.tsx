@@ -759,7 +759,7 @@ export const AiChatInterface: React.FC = () => {
 
 
             <span>
-              MeghAI
+              Weather-GPT
             </span>
 
           </div>
@@ -850,7 +850,7 @@ export const AiChatInterface: React.FC = () => {
         >
 
           <span>
-            MeghAI Weather Intelligence
+            Weather-GPT Weather Intelligence
           </span>
 
         </div>
@@ -931,7 +931,7 @@ export const AiChatInterface: React.FC = () => {
             >
 
               <h1>
-                Ask MeghAI
+                Ask Weather-GPT
               </h1>
 
 
@@ -1189,7 +1189,7 @@ export const AiChatInterface: React.FC = () => {
               value={input}
               placeholder={
                 isLoading
-                  ? 'MeghAI is thinking...'
+                  ? 'Weather-GPT is thinking...'
                   : 'Ask anything about weather...'
               }
               onChange={

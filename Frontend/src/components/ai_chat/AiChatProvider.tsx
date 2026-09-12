@@ -2280,11 +2280,11 @@ STRICT DATA RULES:
         ============================================= */
 
         const prompt = `
-You are MeghAI, an intelligent
+You are Weather-GPT, an intelligent
 conversational weather assistant.
 
 You are part of a weather intelligence
-platform called MeghAI.
+platform called Weather-GPT.
 
 
 
@@ -2390,7 +2390,7 @@ ${userQuestion}
 
 
 
-Now answer naturally as MeghAI.
+Now answer naturally as Weather-GPT.
 `;
 
 
